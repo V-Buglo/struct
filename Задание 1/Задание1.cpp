@@ -26,11 +26,14 @@ int main() {
 	int change;
 	months NumberMonth;
 
-	cout << "¬ведите номер мес€ца: ";
-	cin >> change;
-	NumberMonth = static_cast<months>(change);
+	while (true) {
 
-	while (change != 0) {
+		cout << "¬ведите номер мес€ца: ";
+		cin >> change;
+		if (change == 0) break;
+
+		NumberMonth = static_cast<months>(change);
+
 		switch (NumberMonth)
 		{
 		case months::January: cout << "январь" << endl; break;
@@ -48,11 +51,6 @@ int main() {
 		default: cout << "Ќеправильный номер!" << endl;
 			break;
 		}
-
-	cout << "¬ведите номер мес€ца: ";
-	cin >> change;
-	NumberMonth = static_cast<months>(change);
-
 	}
 
 	return 0;

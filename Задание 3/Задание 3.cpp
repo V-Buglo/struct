@@ -33,14 +33,20 @@ Address* AddStruct(Address* Obj, const int counter)
 }
 
 void addAdress(Address* p, const int counter) {
+	
+	cin.sync();
 	cout << "Город: ";
 	cin >> p[counter].city;
+	cin.sync();
 	cout << "Улица: ";
 	cin >> p[counter].street;
+	cin.sync();
 	cout << "Номер дома: ";
 	cin >> p[counter].numberHouse;
+	cin.sync();
 	cout << "Номер квартиры: ";
 	cin >> p[counter].numberApartments;
+	cin.sync();
 	cout << "Индекс: ";
 	cin >> p[counter].index;
 }
@@ -56,13 +62,17 @@ void showAddress(Address* arr, int counter) {
 
 }
 
+void deleteAdress(Address* arr) {
+	delete[] arr;
+}
+
 int main() {
 
 	setlocale(LC_ALL, "rus");
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	Address* adress_arr = new Address;
+	Address* adress_arr = nullptr;
 	Address newAdress;
 
 	int counter = 0;
@@ -90,6 +100,7 @@ int main() {
 	
 	} while (choice != 0);
 
+	deleteAdress(adress_arr);
 
 	return 0;
 }
